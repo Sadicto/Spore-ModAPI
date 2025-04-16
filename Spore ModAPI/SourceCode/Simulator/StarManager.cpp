@@ -127,6 +127,18 @@ namespace Simulator
 		Args(uint32_t messageId, Swarm::Components::DistributeEffectMessageData* pDistributeData, StarType starType),
 		Args(messageId, pDistributeData, starType));
 
+	auto_METHOD_VOID(cStarManager, GetPlantsByTerrainScript,
+		Args(ResourceKey* terrainScript, eastl::vector<ResourceKey>* plantsVector),
+		Args(terrainScript, plantsVector));
+
+	auto_METHOD_VOID(cStarManager, GeneratePlanetPlants,
+		Args(eastl::vector<ResourceKey>* terrainScriptPlants, int terrascore, int terrascoreMinus1, int numOfPlantsInHighestScore, char unkModifier, eastl::vector<ResourceKey>* planetPlants),
+		Args(terrainScriptPlants, terrascore, terrascoreMinus1, numOfPlantsInHighestScore, unkModifier, planetPlants));
+
+	auto_METHOD_VOID(cStarManager, GeneratePlanetCreatures,
+		Args(eastl::vector<ResourceKey>* priorityCreatures, int terrascore, int terrascoreMinus1, int numOfCreaturesInHighestScore, int unkModifier, eastl::vector<ResourceKey>* planetCreatures),
+		Args(priorityCreatures, terrascore, terrascoreMinus1, numOfCreaturesInHighestScore, unkModifier, planetCreatures));
+
 
 	cPlanetRecord* PlanetID::GetRecord() const
 	{

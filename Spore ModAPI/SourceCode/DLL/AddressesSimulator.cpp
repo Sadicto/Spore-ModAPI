@@ -625,6 +625,10 @@ namespace Simulator
 		DefineAddress(GenerateSolSystem, SelectAddress(0xBB1A00, 0xBB2BF0));
 		DefineAddress(RequirePlanetsForStar, SelectAddress(0xBB3AA0, 0xBB4C90));
 		DefineAddress(GeneratePlanetsForStar, SelectAddress(0xBB30B0, 0xBB42A0));
+
+		DefineAddress(GetPlantsByTerrainScript, SelectAddress(0x00BAD210, 0x00BAD210));
+		DefineAddress(GeneratePlanetPlants, SelectAddress(0x00BAC9C0, 0x00BAC9C0));
+		DefineAddress(GeneratePlanetCreatures, SelectAddress(0x00BACE60, 0x00BACE60));
 	}
 
 	namespace Addresses(cSpaceTradeRouteManager)

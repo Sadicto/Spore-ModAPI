@@ -267,6 +267,12 @@ namespace Simulator
 		/// @returns True
 		static bool StarGenerationMessageHandler(uint32_t messageId, Swarm::Components::DistributeEffectMessageData* pDistributeData, StarType starType);
 
+		void GetPlantsByTerrainScript(ResourceKey* terrainScript, eastl::vector<ResourceKey>* plantsVector);
+
+		void GeneratePlanetPlants(eastl::vector<ResourceKey>* terrainScriptPlants, int terrascore, int terrascoreMinus1, int numOfPlantsInHighestScore, char unkModifier, eastl::vector<ResourceKey>* planetPlants);
+
+		void GeneratePlanetCreatures(eastl::vector<ResourceKey>* priorityCreatures, int terrascore, int terrascoreMinusOne, int numOfCreaturesInHighestScore, int unkModifier, eastl::vector<ResourceKey>* planetCreatures);
+
 	public:
 		/* 20h */	eastl::map<int, int> field_20;
 		/* 3Ch */	eastl::vector<int> field_3C;
@@ -347,6 +353,10 @@ namespace Simulator
 		DeclareAddress(GenerateSolSystem);  // 0xBB1A00, 0xBB2BF0
 		DeclareAddress(RequirePlanetsForStar);  // 0xBB3AA0 0xBB4C90
 		DeclareAddress(GeneratePlanetsForStar);  // 0xBB30B0 0xBB42A0
+
+		DeclareAddress(GetPlantsByTerrainScript);  // 0x00BAD210, 0x00BAD210
+		DeclareAddress(GeneratePlanetPlants);  // 0x00BAC9C0, 0x00BAC9C0
+		DeclareAddress(GeneratePlanetCreatures);  // 0x00BACE60, 0x00BACE60
 	}
 
 	namespace Addresses(cSpaceTradeRouteManager)
