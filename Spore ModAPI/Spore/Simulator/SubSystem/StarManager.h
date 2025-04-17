@@ -271,7 +271,7 @@ namespace Simulator
 
 		void GeneratePlanetPlants(eastl::vector<ResourceKey>* terrainScriptPlants, int terrascore, int terrascoreMinus1, int numOfPlantsInHighestScore, char unkModifier, eastl::vector<ResourceKey>* planetPlants);
 
-		void GeneratePlanetCreatures(eastl::vector<ResourceKey>* priorityCreatures, int terrascore, int terrascoreMinusOne, int numOfCreaturesInHighestScore, int unkModifier, eastl::vector<ResourceKey>* planetCreatures);
+		void GeneratePlanetCreatures(eastl::vector<ResourceKey>* priorityCreatures, int terrascore, int terrascoreMinusOne, int numOfHerbivoresInHighestScore, int NumberOfCarnivoresInHighestScore, eastl::vector<ResourceKey>* planetCreatures);
 
 	public:
 		/* 20h */	eastl::map<int, int> field_20;

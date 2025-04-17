@@ -136,8 +136,8 @@ namespace Simulator
 		Args(terrainScriptPlants, terrascore, terrascoreMinus1, numOfPlantsInHighestScore, unkModifier, planetPlants));
 
 	auto_METHOD_VOID(cStarManager, GeneratePlanetCreatures,
-		Args(eastl::vector<ResourceKey>* priorityCreatures, int terrascore, int terrascoreMinus1, int numOfCreaturesInHighestScore, int unkModifier, eastl::vector<ResourceKey>* planetCreatures),
-		Args(priorityCreatures, terrascore, terrascoreMinus1, numOfCreaturesInHighestScore, unkModifier, planetCreatures));
+		Args(eastl::vector<ResourceKey>* priorityCreatures, int terrascore, int terrascoreMinus1, int numOfHerbivoresInHighestScore, int NumberOfCarnivoresInHighestScore, eastl::vector<ResourceKey>* planetCreatures),
+		Args(priorityCreatures, terrascore, terrascoreMinus1, numOfHerbivoresInHighestScore, NumberOfCarnivoresInHighestScore, planetCreatures));
 
 
 	cPlanetRecord* PlanetID::GetRecord() const
