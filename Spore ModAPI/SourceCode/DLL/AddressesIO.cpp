@@ -12,6 +12,7 @@
 #include <Spore\IO\StreamNull.h>
 #include <Spore\IO\StreamCompressionZLib.h>
 #include <Spore\IO\XmlWriter.h>
+#include <Spore\IO\IniFile.h>
 
 namespace Addresses(IO)
 {
@@ -243,7 +244,8 @@ namespace IO
 		DefineAddress(SetCompressionHint, SelectAddress(0x672830, 0x67D2A0));
 		DefineAddress(Open, SelectAddress(0x672AA0, 0x67D510));
 		// destructor; private for ModAPI
-		DefineAddress(Dispose, SelectAddress(0x67DC30, 0x67DAD0));
+		DefineAddress(_dtor, SelectAddress(0x67DC30, 0x67DAD0));
+		DefineAddressAlias(Dispose, _dtor);
 	}
 
 	namespace Addresses(StreamDecompressionZLib)
@@ -266,7 +268,38 @@ namespace IO
 		DefineAddress(SetBufferSize, SelectAddress(0x672960, 0x67D3E0));
 		DefineAddress(Open, SelectAddress(0x672DC0, 0x67D850));
 		// destructor; private for ModAPI
-		DefineAddress(Dispose, SelectAddress(0x67DCE0, 0x67DB80));
+		DefineAddress(_dtor, SelectAddress(0x67DCE0, 0x67DB80));
+		DefineAddressAlias(Dispose, _dtor);
+	}
+
+	namespace Addresses(IniFile)
+	{
+		DefineAddress(GetOption, SelectAddress(0x90c410, 0x932fc0));
+		DefineAddress(SetOption, SelectAddress(0x90c430, 0x932fe0));
+		DefineAddress(GetPath, SelectAddress(0x959f70, 0x6e6560));
+		DefineAddress(SetPath, SelectAddress(0x90c460, 0x933010));
+		DefineAddress(GetStream, SelectAddress(0x90c4d0, 0x933080));
+		DefineAddress(SetStream, SelectAddress(0x90c4e0, 0x933090));
+		DefineAddress(Close, SelectAddress(0x90e5a0, 0x934ff0));
+		DefineAddress(ReadEntry, SelectAddress(0x90cc10, 0x933820));
+		DefineAddress(ReadEntryToBuffer, SelectAddress(0x90d410, 0x933eb0));
+		DefineAddress(ReadEntryFormatted, SelectAddress(0x90cca0, 0x9338b0));
+		DefineAddress(WriteEntry, SelectAddress(0x90d9d0, 0x934420));
+		DefineAddress(WriteEntryFormatted, SelectAddress(0x90c810, 0x9333c0));
+		DefineAddress(ReadBinary, SelectAddress(0x90c8f0, 0x9334a0));
+		DefineAddress(WriteBinary, SelectAddress(0x90ca60, 0x933610));
+		DefineAddress(EnumSections, SelectAddress(0x90e220, 0x934c70));
+		DefineAddress(EnumEntries, SelectAddress(0x90ea80, 0x9354d0));
+		DefineAddress(SectionExists, SelectAddress(0x90d6d0, 0x934170));
+		DefineAddress(Open, SelectAddress(0x90c540, 0x9330f0));
+		DefineAddress(GetEncoding, SelectAddress(0x90c670, 0x933220));
+		DefineAddress(LoadSectionNames, SelectAddress(0x90e610, 0x935060));
+		DefineAddress(GetFileLine8To8, SelectAddress(0x90cfb0, 0x933b40));
+		DefineAddress(GetFileLine16To16, SelectAddress(0x90d0c0, 0x933c50));
+		DefineAddress(GetFileLine, SelectAddress(0x90cdc0, 0x933950));
+		DefineAddress(ConvertAndWriteStream, SelectAddress(0x90cb20, 0x9336d0));
+		// stub
+		DefineAddress(_vftable, SelectAddress(0x1407fc8, 0x143e980));
 	}
 }
 #endif
