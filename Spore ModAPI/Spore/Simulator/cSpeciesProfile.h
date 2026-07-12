@@ -70,7 +70,7 @@ namespace Simulator
 		};
 
 		/* 00h */	UnkStructPool capsInfos;
-		/* 4E0h */	ResourceKey mSkinColors[3];	//what is this?
+		/* 4E0h */	Math::ColorRGB mSkinColors[3];	//[0] base, [1] coat, [2] detail.
 		/* 504h */	ResourceKey mCreatureKey;
 		/* 510h */	ResourceKey mBabyKey;
 		/* 51Ch */	eastl::string16 mCreatureName;
