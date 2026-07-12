@@ -156,6 +156,7 @@ namespace Simulator
 
 		kPlanetFlagIsDestroyed = 0x100,  // 1 << 8
 
+		kPlanetFlagHasWildlifeSanctuary = 0x800,  // 1 << 11
 		kPlanetFlagRedOrbit = 0x1000,  // 1 << 12
 		kPlanetFlagBlueOrbit = 0x2000,  // 1 << 13
 	};
