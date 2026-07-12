@@ -38,7 +38,7 @@ namespace Simulator
 		kStarFlagPotentialSaveGame = 0x1,  // 1 << 0
 		kStarFlagSaveGame = 0x2,  // 1 << 1
 
-		// 1 << 3 has monolith? Also set on some stars without a monolith.
+		// 1 << 3 has monolith? Also set on some stars without a monolith and on the home star during part of the tutorial.
 
 		kStarFlagIsOwned = 0x10,  // 1 << 4
 		
