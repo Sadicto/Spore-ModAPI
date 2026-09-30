@@ -199,6 +199,11 @@ bool ApplyOverride(Graphics::Model* pModel) {
 member_detour(FinishBackgroundLoad__detour, Graphics::cModelWorld, void(Graphics::Model**)) {
 	void detoured(Graphics::Model** ppModel) {
 		Graphics::Model* model = *ppModel;
+		PropertyListPtr prop;
+		if (model)
+		{
+			prop = model->mpPropList;
+		}
 		
 		original_function(this, ppModel);
 
@@ -210,6 +215,10 @@ member_detour(FinishBackgroundLoad__detour, Graphics::cModelWorld, void(Graphics
 			asset->mMeshLods[3] = nullptr;
 			asset->mMeshLodHi = nullptr;
 			asset->mMeshHull = nullptr;
+		}
+		if (prop->GetReferenceCount() == 1)
+		{
+			App::ConsolePrintF("Crash avoided");
 		}
 	}
 };
